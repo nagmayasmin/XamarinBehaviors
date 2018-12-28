@@ -1,0 +1,12 @@
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.deps.json
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.dll
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.pdb
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.csproj.CoreCompileInputs.cache
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.AssemblyInfoInputs.cache
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.AssemblyInfo.cs
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.dll
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.pdb
+C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.csprojAssemblyReference.cache
