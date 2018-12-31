@@ -34,7 +34,10 @@ namespace XamarinBehaviors.ViewModels
                         Player2 = this.Player2,
                         NumberOfSets = this.NumberOfSets,
                         CurrentScore1 = this.CurrentScore1,
-                        CurrentScore2= this.CurrentScore2 
+                        CurrentScore2= this.CurrentScore2,
+                        Player1Serving = this.Player1Serving,
+                        Player2Serving = this.Player2Serving
+
                     });
 
                 });
@@ -79,6 +82,21 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _currentScore2, value);
         }
 
+        bool _player1serving;
+
+        public bool Player1Serving
+        {
+            get => _player1serving;
+            set => SetProperty(ref _player1serving, value);
+        }
+
+        bool _player2serving;
+
+        public bool Player2Serving
+        {
+            get => _player2serving;
+            set => SetProperty(ref _player2serving, value);
+        }
     }
 
 }   

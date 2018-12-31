@@ -19,7 +19,7 @@ namespace XamarinBehaviors.Services
             var dbPath = DependencyService.Get<IFileHelper>().GetLocalFilePath("TennisGame.db3");
             database = new SQLiteAsyncConnection(dbPath);
 
-            database.DropTableAsync<PlanAGame>().Wait();
+         //   database.DropTableAsync<PlanAGame>().Wait();
             database.CreateTableAsync<PlanAGame>().Wait();
         }
 

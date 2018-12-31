@@ -12,12 +12,15 @@
 
     <StackLayout>
         <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
-       
-        <Entry x:Name="player1" Placeholder="1st Player Name" BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
-        <Switch IsEnabled="True" />
-  
-        <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
-        <Switch IsEnabled="True" />
+        <StackLayout>
+            <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
+            <Switch IsEnabled="True" HorizontalOptions="End" IsToggled="{Binding Player1Serving}" />
+        </StackLayout>
+
+        <StackLayout>
+            <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
+            <Switch IsEnabled="True" HorizontalOptions="End" IsToggled="{Binding Player2Serving}" />
+        </StackLayout>
 
         <Entry Placeholder="How many sets" WidthRequest="2" Margin="10" BackgroundColor="AliceBlue"  Text="{Binding NumberOfSets}"/>
 
@@ -26,6 +29,7 @@
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
            <ColumnDefinition Width="80"/>
+           <ColumnDefinition Width="8"/>
            <ColumnDefinition Width="60"/>
            <ColumnDefinition Width="60" />
            <ColumnDefinition Width="60" />
@@ -42,14 +46,16 @@
 
 
             <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" />
+            <Label Text="*" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Medium" />
             <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
+            <Label Text="*" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Medium" />
 
-            <Label BackgroundColor="Aquamarine" Grid.Column="1" Grid.Row="0" Text="{Binding Set11}"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set12}"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set13}"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}"/>
             <!--  <Entry BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding CurrentScore1}"/> -->
 
-            <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="4" Grid.Row="0">
+            <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="5" Grid.Row="0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>LOVE</x:String>
@@ -61,7 +67,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Picker SelectedItem="{Binding CurrentScore2}" Grid.Column="4" Grid.Row="1">
+            <Picker SelectedItem="{Binding CurrentScore2}" Grid.Column="5" Grid.Row="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>LOVE</x:String>
@@ -74,13 +80,12 @@
             </Picker>
 
 
-            <Label BackgroundColor="BurlyWood" Grid.Column="1" Grid.Row="1" Text="{Binding Set21}"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set22}" />
-            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set23}"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}" />
+            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}"/>
             <!-- <Entry BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding CurrentScore2}"/> -->
 
         </Grid>
-           
-
+              
     </StackLayout>
 </ContentPage>
