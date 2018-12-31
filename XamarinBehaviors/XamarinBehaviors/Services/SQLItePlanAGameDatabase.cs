@@ -9,23 +9,17 @@ using XamarinBehaviors.Models;
 
 namespace XamarinBehaviors.Services
 {
-   public class SQLItePlanAGameDatabase : IPlanAGame
+   public class SQLitePlanAGameDatabase : IPlanAGame
     {
         readonly SQLiteAsyncConnection database;
 
-        public SQLItePlanAGameDatabase()
+      
+        public SQLitePlanAGameDatabase()
         {
             var dbPath = DependencyService.Get<IFileHelper>().GetLocalFilePath("TennisGame.db3");
             database = new SQLiteAsyncConnection(dbPath);
-        }
 
-
-        public SQLItePlanAGameDatabase(string dbPath)
-        {
-            dbPath = DependencyService.Get<IFileHelper>().GetLocalFilePath("TennisGame.db3");
-            database = new SQLiteAsyncConnection(dbPath);
-
-            //  database.DropTableAsync<PlayDayTime>().Wait();
+            database.DropTableAsync<PlanAGame>().Wait();
             database.CreateTableAsync<PlanAGame>().Wait();
         }
 
@@ -37,10 +31,7 @@ namespace XamarinBehaviors.Services
             }
             else
             {
-                item.Player1 = "Nagma";
-                item.Player2 = "Ayesha";
-                item.NumberOfSets = 3;
-                
+                    
                 return database.InsertAsync(item);
             }
         }

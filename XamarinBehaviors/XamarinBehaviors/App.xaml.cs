@@ -9,28 +9,13 @@ namespace XamarinBehaviors
 {
     public partial class App : Application
     {
-        static SQLItePlanAGameDatabase database;
+        public static ViewModels.AddPlanGameViewModel PlayListViewModel { get; set; }
 
-        public static SQLItePlanAGameDatabase Database
-        {
-            get
-            {
-                if (database == null)
-
-                {
-                    string localFilePath = DependencyService.Get<IFileHelper>().GetLocalFilePath("TennsGame.db3");
-                    database = new SQLItePlanAGameDatabase(localFilePath);
-                }
-
-
-                return database;
-            }
-        }
-
+              
         public App()
         {
             InitializeComponent();
-            DependencyService.Register<SQLItePlanAGameDatabase>();
+            DependencyService.Register<SQLitePlanAGameDatabase>();
 
             MainPage = new MainPage();
         }

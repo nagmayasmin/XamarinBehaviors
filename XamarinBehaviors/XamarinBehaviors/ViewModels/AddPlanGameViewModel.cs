@@ -26,17 +26,16 @@ namespace XamarinBehaviors.ViewModels
         {
             try
             {
-
-                var ModelGame = new Models.PlanAGame()
+               AddPlanAGame = new Command(async () =>
                 {
-                    Player1 = this.Player1,
-                    Player2 = this.Player2,
-                    NumberOfSets = this.NumberOfSets
-                } ;
-
-                AddPlanAGame = new Command(async () =>
-                {
-                    var todoList = await DependencyService.Get<IPlanAGame>().SavePlanGame(ModelGame);
+                    var todoList = await DependencyService.Get<IPlanAGame>().SavePlanGame(new Models.PlanAGame()
+                    {
+                        Player1 = this.Player1,
+                        Player2 = this.Player2,
+                        NumberOfSets = this.NumberOfSets,
+                        CurrentScore1 = this.CurrentScore1,
+                        CurrentScore2= this.CurrentScore2 
+                    });
 
                 });
             }
@@ -64,7 +63,23 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _player2, value);
         }
 
-     }
+        string _currentScore1;
+
+        public string CurrentScore1
+        {
+            get => _currentScore1;
+            set => SetProperty(ref _currentScore1, value);
+        }
+
+        string _currentScore2;
+
+        public string CurrentScore2
+        {
+            get => _currentScore2;
+            set => SetProperty(ref _currentScore2, value);
+        }
+
+    }
 
 }   
 

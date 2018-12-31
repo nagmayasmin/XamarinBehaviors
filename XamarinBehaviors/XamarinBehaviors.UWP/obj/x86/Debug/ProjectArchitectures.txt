@@ -1,1 +1,1 @@
-C:\Users\nagm7167\source\repos\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.UWP\XamarinBehaviors.UWP.csproj;x86
+D:\MyXamarinApps\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.UWP\XamarinBehaviors.UWP.csproj;x86

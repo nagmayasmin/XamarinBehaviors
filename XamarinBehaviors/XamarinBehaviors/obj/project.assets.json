@@ -94,7 +94,6 @@
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -104,11 +103,11 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "R73gEjqCkI2Nw/IlN8QvcgPNklqQiPowp47JwvW0Bnp/RZnjN4UrJwEvWVJWRK1MsQ+HIfGe9i4aQlfK+ei9jA==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
-        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -236,7 +235,6 @@
       "type": "package",
       "path": "sqlite-net/1.0.8",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "content/SQLite.cs",
         "content/SQLiteAsync.cs",
@@ -249,7 +247,6 @@
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
@@ -265,7 +262,6 @@
       "type": "package",
       "path": "sqlitepclraw.bundle_green/1.1.11",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/wp8/SQLitePCLRaw.bundle_green.targets",
         "build/wp80/arm/SQLitePCLRaw.batteries_green.dll",
@@ -312,7 +308,6 @@
       "type": "package",
       "path": "sqlitepclraw.core/1.1.11",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid/SQLitePCLRaw.core.dll",
         "lib/Xamarin.Mac20/SQLitePCLRaw.core.dll",
@@ -334,11 +329,10 @@
       ]
     },
     "Xamarin.Forms/3.4.0.1008975": {
-      "sha512": "tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
+      "sha512": "036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
       "type": "package",
       "path": "xamarin.forms/3.4.0.1008975",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -489,23 +483,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nagm7167\\.nuget\\packages\\": {},
+    "C:\\Users\\nagma\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj",
+      "projectUniqueName": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj",
       "projectName": "XamarinBehaviors",
-      "projectPath": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj",
-      "packagesPath": "C:\\Users\\nagm7167\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\obj\\",
+      "projectPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj",
+      "packagesPath": "C:\\Users\\nagma\\.nuget\\packages\\",
+      "outputPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nagm7167\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nagma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -513,7 +507,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\nagm7167\\AppData\\Local\\Esri\\NuGet": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

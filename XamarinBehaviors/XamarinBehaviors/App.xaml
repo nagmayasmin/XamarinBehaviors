@@ -8,8 +8,6 @@
         <Style x:Key="NormalEntryField" TargetType="Entry">
             <Style.Setters>
                 <Setter Property="behaviors:EntryAllUpperCase.AttachBehavior" Value="true" />
-                <Setter Property="behaviors:EntryNoSpecialCharacters.AttachBehavior" Value="true" />
-                <Setter Property="behaviors:NumericValidationBehavior.AttachBehavior" Value="true" />
             </Style.Setters>
           </Style>
     </Application.Resources>

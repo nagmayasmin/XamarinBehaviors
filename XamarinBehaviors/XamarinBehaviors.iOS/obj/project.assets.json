@@ -882,11 +882,10 @@
       ]
     },
     "Xamarin.Forms/3.4.0.1008975": {
-      "sha512": "tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
+      "sha512": "036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
       "type": "package",
       "path": "xamarin.forms/3.4.0.1008975",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -1040,20 +1039,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nagm7167\\.nuget\\packages\\": {}
+    "C:\\Users\\nagma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\XamarinBehaviors.iOS.csproj",
+      "projectUniqueName": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\XamarinBehaviors.iOS.csproj",
       "projectName": "XamarinBehaviors.iOS",
-      "projectPath": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\XamarinBehaviors.iOS.csproj",
-      "packagesPath": "C:\\Users\\nagm7167\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\obj\\",
+      "projectPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\XamarinBehaviors.iOS.csproj",
+      "packagesPath": "C:\\Users\\nagma\\.nuget\\packages\\",
+      "outputPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\nagm7167\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nagma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1061,14 +1060,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\nagm7167\\AppData\\Local\\Esri\\NuGet": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj": {
-              "projectPath": "C:\\Users\\nagm7167\\source\\repos\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj"
+            "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj": {
+              "projectPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj"
             }
           }
         }

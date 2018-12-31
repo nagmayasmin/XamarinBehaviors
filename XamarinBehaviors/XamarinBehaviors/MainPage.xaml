@@ -2,35 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinBehaviors"       
-             xmlns:behave="clr-namespace:XamarinBehaviors.Behaviors"
+             xmlns:behavior="clr-namespace:XamarinBehaviors.Behaviors"
              xmlns:vm="clr-namespace:XamarinBehaviors.ViewModels"
              x:Class="XamarinBehaviors.MainPage">
 
     <ContentPage.BindingContext>
         <vm:AddPlanGameViewModel />
     </ContentPage.BindingContext>
-    
-    <StackLayout>
-        <Entry x:Name="entry" Placeholder="Enter a text" HorizontalOptions="Center" WidthRequest="150">
-            <Entry.Behaviors>
-                <behave:EntryNoSpecialCharacters />
-            </Entry.Behaviors>
-        </Entry>
-        <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
-        <Frame OutlineColor="Red" >
-            <Entry x:Name="player1"  Placeholder="Enter First Player Name" BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" />
-        </Frame>
 
-        <Frame OutlineColor="Red" >
-            <Entry x:Name="player2"  Placeholder="Enter Second Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"/>
-        </Frame>
+    <StackLayout>
+        <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
+       
+        <Entry x:Name="player1" Placeholder="1st Player Name" BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
+        <Switch IsEnabled="True" />
+  
+        <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
+        <Switch IsEnabled="True" />
+
         <Entry Placeholder="How many sets" WidthRequest="2" Margin="10" BackgroundColor="AliceBlue"  Text="{Binding NumberOfSets}"/>
 
-        <Button Text="Save" Margin="10" BackgroundColor="Green" Command="{Binding AddPlanAGame}"/>
+        <Button Text="Save" Margin="10" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}"/>
 
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="60"/>
+           <ColumnDefinition Width="80"/>
            <ColumnDefinition Width="60"/>
            <ColumnDefinition Width="60" />
            <ColumnDefinition Width="60" />
@@ -46,24 +41,46 @@
        </Grid.RowDefinitions>
 
 
-            <Label Text="Nagma" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium"/>
-            <Label Text= "Ayesha" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
+            <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" />
+            <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
 
-            <Label BackgroundColor="Aquamarine" Grid.Column="1" Grid.Row="0"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="1" Grid.Row="0" Text="{Binding Set11}"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set12}"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set13}"/>
+            <!--  <Entry BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding CurrentScore1}"/> -->
+
+            <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="4" Grid.Row="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>LOVE</x:String>
+                        <x:String>15</x:String>
+                        <x:String>30</x:String>
+                        <x:String>40</x:String>
+                        <x:String>AD</x:String>                        
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker SelectedItem="{Binding CurrentScore2}" Grid.Column="4" Grid.Row="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>LOVE</x:String>
+                        <x:String>15</x:String>
+                        <x:String>30</x:String>
+                        <x:String>40</x:String>
+                        <x:String>AD </x:String>                        
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
 
-            <Label BackgroundColor="BurlyWood" Grid.Column="1" Grid.Row="1" />
-            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" />
-            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" />
-            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" />
+            <Label BackgroundColor="BurlyWood" Grid.Column="1" Grid.Row="1" Text="{Binding Set21}"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set22}" />
+            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set23}"/>
+            <!-- <Entry BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding CurrentScore2}"/> -->
 
         </Grid>
-        
-
-        
+           
 
     </StackLayout>
 </ContentPage>
