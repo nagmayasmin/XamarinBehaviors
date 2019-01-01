@@ -17,6 +17,8 @@ namespace XamarinBehaviors
             InitializeComponent();
             DependencyService.Register<SQLitePlanAGameDatabase>();
 
+            PlayListViewModel = new ViewModels.AddPlanGameViewModel();
+
             MainPage = new MainPage();
         }
 

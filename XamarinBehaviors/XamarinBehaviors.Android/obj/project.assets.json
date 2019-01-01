@@ -669,10 +669,11 @@
       ]
     },
     "Xamarin.Android.Support.Fragment/26.1.0.1": {
-      "sha512": "5O73EZwY7rgWAO4A8WFq1gfZnfvcv/lbbJkKadUxWmMoeXsZld2FCOmMZLLU9y5ohu5Dx7QS4QNHcny4t9v+HA==",
+      "sha512": "OfD0yM/4cUHrB+SLoLxniQVyQVaFB15x6Ezbux/cIJosH00FbqdEKu1E+VQ2DxUSiV5G0ZQZfHWzbBWgFqLuRw==",
       "type": "package",
       "path": "xamarin.android.support.fragment/26.1.0.1",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "THIRD-PARTY-NOTICES.txt",
         "build/MonoAndroid80/Xamarin.Android.Support.Fragment.targets",
@@ -811,10 +812,11 @@
       ]
     },
     "Xamarin.Forms/3.4.0.1008975": {
-      "sha512": "036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
+      "sha512": "tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
       "type": "package",
       "path": "xamarin.forms/3.4.0.1008975",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -974,20 +976,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nagma\\.nuget\\packages\\": {}
+    "C:\\Users\\nagm7167\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\XamarinBehaviors.Android.csproj",
+      "projectUniqueName": "E:\\XSamples\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\XamarinBehaviors.Android.csproj",
       "projectName": "XamarinBehaviors.Android",
-      "projectPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\XamarinBehaviors.Android.csproj",
-      "packagesPath": "C:\\Users\\nagma\\.nuget\\packages\\",
-      "outputPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\obj\\",
+      "projectPath": "E:\\XSamples\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\XamarinBehaviors.Android.csproj",
+      "packagesPath": "C:\\Users\\nagm7167\\.nuget\\packages\\",
+      "outputPath": "E:\\XSamples\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\nagma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nagm7167\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -995,13 +997,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\nagm7167\\AppData\\Local\\Esri\\NuGet": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid80": {
           "projectReferences": {
-            "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj": {
-              "projectPath": "D:\\MyXamarinApps\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj"
+            "E:\\XSamples\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj": {
+              "projectPath": "E:\\XSamples\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors\\XamarinBehaviors.csproj"
             }
           }
         }

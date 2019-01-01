@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinBehaviors.Common;
 using XamarinBehaviors.Services;
+using System.Threading.Tasks;
 
 namespace XamarinBehaviors.ViewModels
 {
@@ -13,6 +14,11 @@ namespace XamarinBehaviors.ViewModels
         public ICommand AddPlanAGame
         {
             get;
+        }
+
+        public ICommand ToggleSwitchPlayer1
+        {
+            get { return new ToggleSwitchPlayer1(this);  }
         }
 
         int _numberOfSets;
@@ -35,8 +41,8 @@ namespace XamarinBehaviors.ViewModels
                         NumberOfSets = this.NumberOfSets,
                         CurrentScore1 = this.CurrentScore1,
                         CurrentScore2= this.CurrentScore2,
-                        Player1Serving = this.Player1Serving,
-                        Player2Serving = this.Player2Serving
+                        Player1Serving = App.PlayListViewModel.Player1Serving,
+                        Player2Serving = App.PlayListViewModel.Player2Serving
 
                     });
 
@@ -97,8 +103,41 @@ namespace XamarinBehaviors.ViewModels
             get => _player2serving;
             set => SetProperty(ref _player2serving, value);
         }
+
+        internal  void DoExecute()
+        {
+            dispAlert();
+        }
+
+        private async void dispAlert()
+        {
+            await Application.Current.MainPage.DisplayAlert("Alert", "This Is Alert.", "OK");
+        }
     }
 
+    internal class ToggleSwitchPlayer1 : ICommand
+    {
+        private AddPlanGameViewModel addPlanGameViewModel;
+
+        public ToggleSwitchPlayer1(AddPlanGameViewModel addPlanGameViewModel)
+        {
+            this.addPlanGameViewModel = addPlanGameViewModel;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            addPlanGameViewModel.DoExecute();
+        }
+
+       
+    }
 }   
 
 
