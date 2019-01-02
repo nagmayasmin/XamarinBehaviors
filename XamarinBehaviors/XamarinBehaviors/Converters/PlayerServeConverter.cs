@@ -27,9 +27,9 @@ namespace XamarinBehaviors.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
-                return (bool)value ? "T" : "F" ;
-            else
-                return "T";
+                return (bool)value ? "*" : "" ;
+            
+            return "";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
