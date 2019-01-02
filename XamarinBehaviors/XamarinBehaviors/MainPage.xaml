@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:XamarinBehaviors"       
              xmlns:behavior="clr-namespace:XamarinBehaviors.Behaviors"
              xmlns:converters="clr-namespace:XamarinBehaviors.Converters"
-             xmlns:vm="clr-namespace:XamarinBehaviors.ViewModels"
+             xmlns:vm="clr-namespace:XamarinBehaviors.ViewModels"             
              x:Class="XamarinBehaviors.MainPage">
 
     <ContentPage.Resources>
@@ -19,23 +19,26 @@
         <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
         <StackLayout>
             <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
-            <Switch HorizontalOptions="End" x:Name="switch1" >
+         <!--   <Switch HorizontalOptions="End" x:Name="switch1" >
                 <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
                 </Switch.Behaviors>
-            </Switch>
+            </Switch>  -->
+            
         </StackLayout>
 
         <StackLayout>
             <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
-            <Switch HorizontalOptions="End" x:Name="switch2" >
+            <Picker SelectedItem="{Binding Player1}" ItemDisplayBinding="{Binding Player1}" Grid.Column="5" Grid.Row="0" />
+
+            <!--    <Switch HorizontalOptions="End" x:Name="switch2" >
                 <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
                 </Switch.Behaviors>
-            </Switch>
+            </Switch> -->
         </StackLayout>
 
-       
+       <!--
         <Picker SelectedItem="{Binding NumberOfSets}" Grid.Column="5" Grid.Row="0">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -47,7 +50,7 @@
                     <x:String>6</x:String>
                 </x:Array>
             </Picker.ItemsSource>
-        </Picker>
+        </Picker> -->
 
         <Button Text="Save" Margin="10" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" />
 
@@ -71,10 +74,10 @@
 
 
             <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" />
-            <Label Text= "{Binding IsToggled, Source={x:Reference switch1}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Medium" />
-            
+            <!--   <Label Text= "{Binding IsToggled, Source={x:Reference switch1}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Medium" /> -->
+
             <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
-            <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Medium" />
+            <!--   <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Medium" /> -->
 
             <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}"/>
             <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}"/>

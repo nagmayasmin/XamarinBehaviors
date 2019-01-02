@@ -1,0 +1,12 @@
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.deps.json
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.dll
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.pdb
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.csprojAssemblyReference.cache
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.csproj.CoreCompileInputs.cache
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.AssemblyInfoInputs.cache
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.AssemblyInfo.cs
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamlC.stamp
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.dll
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\obj\Debug\netstandard2.0\XamarinBehaviors.pdb

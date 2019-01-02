@@ -10,14 +10,16 @@ namespace XamarinBehaviors
     public partial class App : Application
     {
         public static ViewModels.AddPlanGameViewModel PlayListViewModel { get; set; }
+        public static ViewModels.PickAPlayerViewModel PickAPlayerViewModel { get; set; }
 
-              
+
         public App()
         {
             InitializeComponent();
             DependencyService.Register<SQLitePlanAGameDatabase>();
 
             PlayListViewModel = new ViewModels.AddPlanGameViewModel();
+            PickAPlayerViewModel = new ViewModels.PickAPlayerViewModel();
 
             MainPage = new MainPage();
         }
