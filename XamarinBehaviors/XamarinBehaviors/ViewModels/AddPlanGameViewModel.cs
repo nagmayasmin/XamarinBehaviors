@@ -21,6 +21,25 @@ namespace XamarinBehaviors.ViewModels
             get { return new ToggleSwitchPlayer1(this);  }
         }
 
+
+        int _set11;
+
+        public int Set11
+        {
+            get => _set11;
+            set => SetProperty(ref _set11, value);
+        }
+
+        int _set21;
+
+        public int Set21
+        {
+            get => _set21;
+            set => SetProperty(ref _set21, value);
+        }
+
+
+
         int _numberOfSets;
 
         public int NumberOfSets
@@ -42,11 +61,16 @@ namespace XamarinBehaviors.ViewModels
                         CurrentScore1 = this.CurrentScore1,
                         CurrentScore2= this.CurrentScore2,
                         Player1Serving = App.PlayListViewModel.Player1Serving,
-                        Player2Serving = App.PlayListViewModel.Player2Serving
+                        Player2Serving = App.PlayListViewModel.Player2Serving,
+                        Set11 = AddSet11(this.CurrentScore1),
+                        Set21 = AddSet21(this.CurrentScore2)
 
                     });
 
                 });
+
+                AddSet11(CurrentScore1);
+                AddSet21(CurrentScore2);
             }
 
             catch(Exception ex)
@@ -55,6 +79,29 @@ namespace XamarinBehaviors.ViewModels
             }
         }
 
+        private int AddSet11(string currentScore2)
+        {
+            if(CurrentScore1 == "GAME")
+            {
+                CurrentScore1 = "LOVE";
+                CurrentScore2 = "LOVE";
+                return Set11 += 1;
+            }
+
+            return Set11;
+        }
+
+        private int AddSet21(string currentScore1)
+        {
+            if (CurrentScore2 == "GAME")
+            {
+                CurrentScore1 = "LOVE";
+                CurrentScore2 = "LOVE";
+                return Set21 += 1;
+               
+            } 
+            return Set21;
+        }
 
         string _player1;
 

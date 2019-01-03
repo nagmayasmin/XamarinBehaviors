@@ -24,25 +24,20 @@ namespace XamarinBehaviors.Behaviors
                 {
                     App.PlayListViewModel.Player1Serving = true;
                     App.PlayListViewModel.Player2Serving = false;
-
-                    Switch sw = new Switch() ;
-                    sw.StyleId = "switch2";
-
-                    ((Switch)sw).IsToggled = false;
+                  
 
                 }
                 
-                //  ((Switch)sender).IsToggled = false;
-                }
-                else
+                             
+                else if(swId == "switch2")
+                          
                 {
-                App.PlayListViewModel.Player2Serving = true;
-                App.PlayListViewModel.Player1Serving = false;
+                    App.PlayListViewModel.Player2Serving = true;
+                    App.PlayListViewModel.Player1Serving = false;
 
-                var sw = new Switch();
-                sw.StyleId = "switch1";
+                }
 
-                ((Switch)sw).IsToggled = false;
+              
             }
         }
         

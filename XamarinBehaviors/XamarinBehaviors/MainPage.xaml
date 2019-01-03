@@ -19,23 +19,29 @@
         <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
         <StackLayout>
             <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
-         <!--   <Switch HorizontalOptions="End" x:Name="switch1" >
-                <Switch.Behaviors>
+            <!--     <Switch HorizontalOptions="End" x:Name="switch1"  BindingContext="{x:Reference switch2}" IsToggled="{Binding Player1Serving, Mode=TwoWay}" x:FieldModifier="Public" >
+            <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
-                </Switch.Behaviors>
+                </Switch.Behaviors>  
             </Switch>  -->
-            
+
+            <Switch HorizontalOptions="End" x:Name="switch1" Toggled="Switch1_Toggled" />
+
         </StackLayout>
 
         <StackLayout>
             <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
-            <Picker SelectedItem="{Binding Player1}" ItemDisplayBinding="{Binding Player1}" Grid.Column="5" Grid.Row="0" />
+            <Picker ItemsSource="{Binding vm.PickAPlayerViewModel}" SelectedItem="{Binding Player1}" ItemDisplayBinding="{Binding Player1}" Grid.Column="5" Grid.Row="0" />
 
-            <!--    <Switch HorizontalOptions="End" x:Name="switch2" >
-                <Switch.Behaviors>
+            <!--   <Switch HorizontalOptions="End" x:Name="switch2" BindingContext="{x:Reference switch1}" IsToggled="{Binding Player2Serving, Mode=TwoWay}" x:FieldModifier="Public" >
+              <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
-                </Switch.Behaviors>
-            </Switch> -->
+                </Switch.Behaviors> 
+            </Switch>  -->
+
+
+            <Switch HorizontalOptions="End" x:Name="switch2" Toggled="Switch2_Toggled"  />
+
         </StackLayout>
 
        <!--
@@ -56,7 +62,7 @@
 
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="80"/>
+           <ColumnDefinition Width="60"/>
            <ColumnDefinition Width="20"/>
            <ColumnDefinition Width="60"/>
            <ColumnDefinition Width="60" />
@@ -79,10 +85,10 @@
             <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
             <!--   <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Medium" /> -->
 
-            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}"/>
-            
+            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+            <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Large"/>
+
             <!--  <Entry BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding CurrentScore1}"/> -->
 
             <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="5" Grid.Row="0">
@@ -112,9 +118,9 @@
             </Picker>
 
 
-            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}" />
-            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
             <!-- <Entry BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding CurrentScore2}"/> -->
 
         </Grid>
