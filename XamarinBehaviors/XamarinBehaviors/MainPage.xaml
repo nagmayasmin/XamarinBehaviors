@@ -16,35 +16,34 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <Label Text="Plan a game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
-        <StackLayout>
-            <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
+        <Label Text="Play a Game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
+        <StackLayout Orientation="Vertical">
+            <!-- <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" /> -->
             <!--     <Switch HorizontalOptions="End" x:Name="switch1"  BindingContext="{x:Reference switch2}" IsToggled="{Binding Player1Serving, Mode=TwoWay}" x:FieldModifier="Public" >
             <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
                 </Switch.Behaviors>  
-            </Switch>  -->
+            </Switch> 
 
-            <Switch HorizontalOptions="End" x:Name="switch1" Toggled="Switch1_Toggled" />
+            <Switch HorizontalOptions="End" x:Name="switch1" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
+            <Switch HorizontalOptions="End" x:Name="switch2" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />  -->
 
         </StackLayout>
 
+ <!--
         <StackLayout>
-            <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
+     <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" /> 
             <Picker ItemsSource="{Binding vm.PickAPlayerViewModel}" SelectedItem="{Binding Player1}" ItemDisplayBinding="{Binding Player1}" Grid.Column="5" Grid.Row="0" />
-
-            <!--   <Switch HorizontalOptions="End" x:Name="switch2" BindingContext="{x:Reference switch1}" IsToggled="{Binding Player2Serving, Mode=TwoWay}" x:FieldModifier="Public" >
+           <Switch HorizontalOptions="End" x:Name="switch2" BindingContext="{x:Reference switch1}" IsToggled="{Binding Player2Serving, Mode=TwoWay}" x:FieldModifier="Public" >
               <Switch.Behaviors>
                     <behavior:ToggleSwitchBehavior />
                 </Switch.Behaviors> 
-            </Switch>  -->
+            </Switch>  
 
+         </StackLayout>
+    -->
 
-            <Switch HorizontalOptions="End" x:Name="switch2" Toggled="Switch2_Toggled"  />
-
-        </StackLayout>
-
-       <!--
+    <!--
         <Picker SelectedItem="{Binding NumberOfSets}" Grid.Column="5" Grid.Row="0">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -58,33 +57,38 @@
             </Picker.ItemsSource>
         </Picker> -->
 
-        <Button Text="Save" Margin="10" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" />
-
+       
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="60"/>
-           <ColumnDefinition Width="20"/>
-           <ColumnDefinition Width="60"/>
-           <ColumnDefinition Width="60" />
-           <ColumnDefinition Width="60" />
-           <ColumnDefinition Width="60" />
+           <ColumnDefinition Width="100"/>
+           <ColumnDefinition Width="50"/>
+           <ColumnDefinition Width="40"/>
+           <ColumnDefinition Width="40" />
+           <ColumnDefinition Width="40" />
+           <ColumnDefinition Width="70" />
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40"/>
        </Grid.RowDefinitions>
 
 
-            <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" />
-            <!--   <Label Text= "{Binding IsToggled, Source={x:Reference switch1}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Medium" /> -->
+            <!--    <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" /> 
+            <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Large" />
 
-            <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/>
-            <!--   <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Medium" /> -->
+            <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/> 
+            <Label Text= "{Binding IsToggled, Source={x:Reference switch1}, Converter={StaticResource PlayerServerConverter}}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Large" /> -->
 
+            <Switch HorizontalOptions="StartAndExpand" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
+            <Switch HorizontalOptions="StartAndExpand" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
+
+            <Entry Placeholder="Player 1" Grid.Column="0" Grid.Row="0" BackgroundColor="Aquamarine" HorizontalOptions="Start" Margin="5" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
+            <Entry Placeholder="Player 2" Grid.Column="0" Grid.Row="1" BackgroundColor="BlanchedAlmond" HorizontalOptions="Start"  Margin="5" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
+           
             <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
             <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
             <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Large"/>
@@ -124,6 +128,10 @@
             <!-- <Entry BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding CurrentScore2}"/> -->
 
         </Grid>
+
+        <StackLayout>
+            <Button Text="Save" Margin="10" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" />
+        </StackLayout>
               
     </StackLayout>
 </ContentPage>

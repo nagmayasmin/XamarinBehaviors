@@ -14,6 +14,7 @@ namespace XamarinBehaviors
             InitializeComponent();
         }
 
+        /*
         private void Switch1_Toggled(object sender, ToggledEventArgs e)
         {
             if(switch1.IsToggled)
@@ -29,5 +30,6 @@ namespace XamarinBehaviors
                 switch1.IsToggled = false;
             }
         }
+        */
     }
 }
