@@ -16,6 +16,7 @@ namespace XamarinBehaviors.Behaviors
 
         private void Sw_Toggled(object sender, ToggledEventArgs e)
         {
+            
             if (((Switch)sender).IsToggled)
             {
                 var swId = ((Switch)sender).StyleId;

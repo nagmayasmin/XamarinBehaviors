@@ -119,7 +119,7 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _player2, value);
         }
 
-        string _currentScore1;
+        string _currentScore1 = "LOVE";
 
         public string CurrentScore1
         {
@@ -127,7 +127,7 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _currentScore1, value);
         }
 
-        string _currentScore2;
+        string _currentScore2 = "LOVE";
 
         public string CurrentScore2
         {
