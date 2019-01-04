@@ -17,46 +17,7 @@
 
     <StackLayout>
         <Label Text="Play a Game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
-        <!--    <StackLayout Orientation="Vertical">
-              <Entry x:Name="player1" Placeholder="1st Player Name"  BackgroundColor="Aquamarine" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" /> -->
-            <!--     <Switch HorizontalOptions="End" x:Name="switch1"  BindingContext="{x:Reference switch2}" IsToggled="{Binding Player1Serving, Mode=TwoWay}" x:FieldModifier="Public" >
-            <Switch.Behaviors>
-                    <behavior:ToggleSwitchBehavior />
-                </Switch.Behaviors>  
-            </Switch> 
-
-            <Switch HorizontalOptions="End" x:Name="switch1" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
-            <Switch HorizontalOptions="End" x:Name="switch2" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />  
-
-        </StackLayout> -->
-
- <!--
-        <StackLayout>
-     <Entry Placeholder="2nd Player Name" BackgroundColor="BlanchedAlmond" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Margin="10" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" /> 
-            <Picker ItemsSource="{Binding vm.PickAPlayerViewModel}" SelectedItem="{Binding Player1}" ItemDisplayBinding="{Binding Player1}" Grid.Column="5" Grid.Row="0" />
-           <Switch HorizontalOptions="End" x:Name="switch2" BindingContext="{x:Reference switch1}" IsToggled="{Binding Player2Serving, Mode=TwoWay}" x:FieldModifier="Public" >
-              <Switch.Behaviors>
-                    <behavior:ToggleSwitchBehavior />
-                </Switch.Behaviors> 
-            </Switch>  
-
-         </StackLayout>
-    -->
-
-    <!--
-        <Picker SelectedItem="{Binding NumberOfSets}" Grid.Column="5" Grid.Row="0">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>1</x:String>
-                    <x:String>2</x:String>
-                    <x:String>3</x:String>
-                    <x:String>4</x:String>
-                    <x:String>5</x:String>
-                    <x:String>6</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker> -->
-
+        
        
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
@@ -72,19 +33,10 @@
             <RowDefinition Height="60" />
             <RowDefinition Height="60"/>
             <RowDefinition Height="40" />
-        <!--    <RowDefinition Height="40" />
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/> -->
+       
         </Grid.RowDefinitions>
 
 
-            <!--    <Label Text="{Binding Player1}" Grid.Column="0" Grid.Row="0" TextColor="Aquamarine" FontSize="Medium" /> 
-            <Label Text= "{Binding IsToggled, Source={x:Reference switch2}, Converter={StaticResource PlayerServerConverter}}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1" TextColor="Red" FontSize="Large" />
-
-            <Label Text= "{Binding Player2}" Grid.Column="0" Grid.Row="1" TextColor="BurlyWood" FontSize="Medium"/> 
-            <Label Text= "{Binding IsToggled, Source={x:Reference switch1}, Converter={StaticResource PlayerServerConverter}}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" TextColor="Red" FontSize="Large" /> -->
-
-                   
             <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
             <Switch  HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
 
@@ -95,7 +47,7 @@
             <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
             <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Small"/>
 
-            <!--  <Entry BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding CurrentScore1}"/> -->
+           
 
             <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="5" Grid.Row="0" >
                 <Picker.ItemsSource>
