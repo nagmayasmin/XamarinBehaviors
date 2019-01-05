@@ -117,11 +117,12 @@ namespace XamarinBehaviors.ViewModels
 
         private int AddSet11(string currentScore2)
         {
-           Set11 = (Set11 < 6 && CurrentScore1 == "GAME") ? Set11 + 1 : Set11;
+           Set11 = (Set11 < 6 && CurrentScore1 == "GAME" && Set21 != 6) ? Set11 + 1 : Set11;
             if (CurrentScore1 == "GAME")
             {
                 CurrentScore1 = "0";
                 CurrentScore2 = "0";
+                AddPlanAGame.Execute(null);
             }
 
             return Set11;
@@ -130,7 +131,7 @@ namespace XamarinBehaviors.ViewModels
 
         private int AddSet21(string currentScore1)
         {
-           Set21 = (Set21 < 6 && CurrentScore2 == "GAME") ? Set21 + 1 : Set21;
+           Set21 = (Set21 < 6 && CurrentScore2 == "GAME" && Set11 != 6) ? Set21 + 1 : Set21;
 
             if (CurrentScore2 == "GAME")
             {
