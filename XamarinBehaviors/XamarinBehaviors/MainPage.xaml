@@ -17,8 +17,7 @@
 
     <StackLayout>
         <Label Text="Play a Game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
-        
-       
+               
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
            <ColumnDefinition Width="100"/>
@@ -52,7 +51,7 @@
             <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="5" Grid.Row="0" >
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>LOVE</x:String>
+                        <x:String>0</x:String>
                         <x:String>15</x:String>
                         <x:String>30</x:String>
                         <x:String>40</x:String>
@@ -67,7 +66,7 @@
             <Picker SelectedItem="{Binding CurrentScore2}" Grid.Column="5" Grid.Row="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>LOVE</x:String>
+                        <x:String>0</x:String>
                         <x:String>15</x:String>
                         <x:String>30</x:String>
                         <x:String>40</x:String>
@@ -78,9 +77,9 @@
             </Picker>
 
 
-            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
             
             <Button Text="Save" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" Grid.Row="2" Margin="1" Grid.ColumnSpan="6"/>
         </Grid>

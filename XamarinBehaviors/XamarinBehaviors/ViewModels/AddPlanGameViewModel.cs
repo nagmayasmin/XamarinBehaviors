@@ -39,6 +39,40 @@ namespace XamarinBehaviors.ViewModels
         }
 
 
+        int _set12;
+
+        public int Set12
+        {
+            get => _set12;
+            set => SetProperty(ref _set12, value);
+        }
+
+        int _set22;
+
+        public int Set22
+        {
+            get => _set22;
+            set => SetProperty(ref _set22, value);
+        }
+
+
+        int _set13;
+
+        public int Set13
+        {
+            get => _set13;
+            set => SetProperty(ref _set13, value);
+        }
+
+        int _set23;
+
+        public int Set23
+        {
+            get => _set23;
+            set => SetProperty(ref _set21, value);
+        }
+
+
 
         int _numberOfSets;
 
@@ -60,17 +94,19 @@ namespace XamarinBehaviors.ViewModels
                         NumberOfSets = this.NumberOfSets,
                         CurrentScore1 = this.CurrentScore1,
                         CurrentScore2= this.CurrentScore2,
-                        Player1Serving = App.PlayListViewModel.Player1Serving,
-                        Player2Serving = App.PlayListViewModel.Player2Serving,
-                        Set11 = AddSet11(this.CurrentScore1),
-                        Set21 = AddSet21(this.CurrentScore2)
+                        Player1Serving = this.Player1Serving,
+                        Player2Serving = this.Player2Serving,
+                        Set11 = AddSet11(CurrentScore1),
+                        Set21 = AddSet21(CurrentScore2),
+                        Set12 = AddSet12(CurrentScore1),
+                        Set22 = AddSet22(CurrentScore2)
+                    //    Set13 = AddSet13(this.CurrentScore1),
+                     //   Set23 = AddSet23(this.CurrentScore2)
 
                     });
 
                 });
 
-                AddSet11(CurrentScore1);
-                AddSet21(CurrentScore2);
             }
 
             catch(Exception ex)
@@ -81,27 +117,82 @@ namespace XamarinBehaviors.ViewModels
 
         private int AddSet11(string currentScore2)
         {
-            if(CurrentScore1 == "GAME")
+           Set11 = (Set11 < 6 && CurrentScore1 == "GAME") ? Set11 + 1 : Set11;
+            if (CurrentScore1 == "GAME")
             {
-                CurrentScore1 = "LOVE";
-                CurrentScore2 = "LOVE";
-                return Set11 += 1;
+                CurrentScore1 = "0";
+                CurrentScore2 = "0";
             }
 
             return Set11;
+                     
         }
 
         private int AddSet21(string currentScore1)
         {
+           Set21 = (Set21 < 6 && CurrentScore2 == "GAME") ? Set21 + 1 : Set21;
+
             if (CurrentScore2 == "GAME")
             {
-                CurrentScore1 = "LOVE";
-                CurrentScore2 = "LOVE";
-                return Set21 += 1;
-               
-            } 
-            return Set21;
+                CurrentScore2 = "0";
+                CurrentScore1 = "0";
+            }
+
+                return Set21;
         }
+
+
+        private int AddSet12(string currentScore1)
+        {
+            Set12 = (CurrentScore1 == "GAME" && (Set11 == 6 || Set12 == 6)) ? Set12 + 1 : Set12;
+            if (CurrentScore1 == "GAME")
+            {
+                CurrentScore1 = "0";
+                CurrentScore2 = "0";
+            }
+
+            return Set12;
+                       
+        }
+
+        private int AddSet22(string currentScore2)
+        {
+            Set22 = (CurrentScore2 == "GAME" && (Set11 == 6 || Set12 == 6)) ? Set22 + 1 : Set22;
+            if (CurrentScore1 == "GAME")
+            {
+                CurrentScore1 = "0";
+                CurrentScore2 = "0";
+            }
+            return Set22;
+
+        }
+
+        /*
+                private int AddSet13(string currentScore2)
+                {
+                    if (CurrentScore1 == "GAME")
+                    {
+                        CurrentScore1 = "0";
+                        CurrentScore2 = "0";
+                        return Set13 += 1;
+                    }
+
+                    return Set13;
+                }
+
+                private int AddSet23(string currentScore1)
+                {
+                    if (CurrentScore2 == "GAME")
+                    {
+                        CurrentScore1 = "0";
+                        CurrentScore2 = "0";
+                        return Set23 += 1;
+
+                    }
+                    return Set23;
+                }
+
+            */
 
         string _player1;
 
@@ -119,7 +210,7 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _player2, value);
         }
 
-        string _currentScore1 = "LOVE";
+        string _currentScore1 = "0";
 
         public string CurrentScore1
         {
@@ -127,7 +218,7 @@ namespace XamarinBehaviors.ViewModels
             set => SetProperty(ref _currentScore1, value);
         }
 
-        string _currentScore2 = "LOVE";
+        string _currentScore2 = "0";
 
         public string CurrentScore2
         {
