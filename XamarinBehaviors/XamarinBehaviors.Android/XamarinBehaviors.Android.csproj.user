@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Samsung -SM-G930A</SelectedDevice>
     <DefaultDevice>Android_Accelerated_x86</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

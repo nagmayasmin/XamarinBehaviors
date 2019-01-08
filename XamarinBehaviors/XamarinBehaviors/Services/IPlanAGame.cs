@@ -8,9 +8,9 @@ namespace XamarinBehaviors.Services
 {
    public interface IPlanAGame
     {
-        Task<List<PlanAGame>> GetPlanAGameAsync();
+        Task<List<PlayAMatch>> GetPlanAGameAsync();
 
-        Task<int> SavePlanGame(PlanAGame item);
+        Task<int> SavePlanGame(PlayAMatch item);
 
     }
 }

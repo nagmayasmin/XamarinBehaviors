@@ -16,7 +16,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <Label Text="Play a Game" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
+        <Label Text="Play a Match" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="10"/>
                
         <Grid Margin="10" >
         <Grid.ColumnDefinitions>
@@ -33,28 +33,37 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
 
-            </Grid.RowDefinitions>
 
+            <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+                <Switch.Triggers>
+                    <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}"  >
+                        <Setter Property="IsToggled" Value="False" />
+                    </DataTrigger>
+                </Switch.Triggers>
+            </Switch>
+        <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
 
-            <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
-            <Switch  HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
+        <Entry Placeholder="Player 1" Grid.Column="0" Grid.Row="0" BackgroundColor="Aquamarine" HorizontalOptions="Start" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
+        <Entry Placeholder="Player 2" Grid.Column="0" Grid.Row="1" BackgroundColor="BlanchedAlmond" HorizontalOptions="Start" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
 
-            <Entry Placeholder="Player 1" Grid.Column="0" Grid.Row="0" BackgroundColor="Aquamarine" HorizontalOptions="Start" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
-            <Entry Placeholder="Player 2" Grid.Column="0" Grid.Row="1" BackgroundColor="BlanchedAlmond" HorizontalOptions="Start" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
-           
-            <Label BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
-            <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Small"/>
-
-            <!--  
+            <Label x:Name="label1" BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small">
+              <!--  <Label.Triggers>
+                   <DataTrigger  TargetType="Label" Binding ="{Binding Source = {x:Reference switch1}, Path= IsToggled}" />
+                       
+                </Label.Triggers> -->
+            </Label>
+       
             
-            Picker needs to bind an item source i.e. database
-            https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/picker/populating-itemssource 
-                   https://stackoverflow.com/questions/43004476/binding-a-picker-to-mvvm-command-xamarin-forms
-            -->
             
-            <Picker SelectedItem="{Binding CurrentScore1}" Grid.Column="5" Grid.Row="0"  >
+         <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+        <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+
+    <!--<Picker Title="Select a Score" Grid.Column="5" Grid.Row="0" ItemsSource="{Binding AllGameScores}" ItemDisplayBinding="{Binding Scores}" BindingContext="{x:StaticResource GameScoreViewModel }" SelectedIndex ="0"/>
+        <Picker Title="Select a Score" Grid.Column="5" Grid.Row="1" ItemsSource="{Binding AllGameScores}" ItemDisplayBinding="{Binding Scores}" BindingContext="{x:StaticResource GameScoreViewModel }" SelectedIndex ="0" /> -->
+
+            <Picker Title="Select a Score" Grid.Column="5" Grid.Row="0" SelectedItem="{Binding CurrentScore1}" >
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>0</x:String>
@@ -64,34 +73,32 @@
                         <x:String>AD</x:String>
                         <x:String>GAME</x:String>
                     </x:Array>
-                 </Picker.ItemsSource>
+                </Picker.ItemsSource>
             </Picker>
 
-            <Picker SelectedItem="{Binding CurrentScore2}" Grid.Column="5" Grid.Row="1" >
+            <Picker Title="Select a Score" Grid.Column="5" Grid.Row="1"  SelectedItem="{Binding CurrentScore2}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>0</x:String>
                         <x:String>15</x:String>
                         <x:String>30</x:String>
                         <x:String>40</x:String>
-                        <x:String>AD </x:String>
+                        <x:String>AD</x:String>
                         <x:String>GAME</x:String>
                     </x:Array>
-            </Picker.ItemsSource>
+                </Picker.ItemsSource>
             </Picker>
 
+        <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+        <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+        <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
 
-            <Label BackgroundColor="BurlyWood" Grid.Column="2" Grid.Row="1" Text="{Binding Set21}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="3" Grid.Row="1" Text="{Binding Set22}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
-            <Label BackgroundColor="BurlyWood" Grid.Column="4" Grid.Row="1" Text="{Binding Set23}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+        <Switch Grid.Row="2" Grid.Column="2" />
+        <Switch Grid.Row="2" Grid.Column="3" />
+        <Switch Grid.Row="2" Grid.Column="4" />
 
-            <Switch Grid.Row="2" Grid.Column="2" />
-            <Switch Grid.Row="2" Grid.Column="3" />
-            <Switch Grid.Row="2" Grid.Column="4" />
-
-            <Button Text="Save" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" Grid.Row="3" Margin="1" Grid.ColumnSpan="6"/>
+        <Button Text="Save" BackgroundColor="Cyan" Command="{Binding AddPlanAGame}" Grid.Row="3" Margin="1" Grid.ColumnSpan="6"/>
         </Grid>
- 
-              
+               
     </StackLayout>
 </ContentPage>

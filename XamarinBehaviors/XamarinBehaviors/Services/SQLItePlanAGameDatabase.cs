@@ -20,10 +20,10 @@ namespace XamarinBehaviors.Services
             database = new SQLiteAsyncConnection(dbPath);
 
          //   database.DropTableAsync<PlanAGame>().Wait();
-            database.CreateTableAsync<PlanAGame>().Wait();
+            database.CreateTableAsync<PlayAMatch>().Wait();
         }
 
-        public Task<int> SavePlanGame(PlanAGame item)
+        public Task<int> SavePlanGame(PlayAMatch item)
         {
             if (item.Id != 0)
             {
@@ -37,9 +37,9 @@ namespace XamarinBehaviors.Services
         }
 
 
-        public Task<List<PlanAGame>> GetPlanAGameAsync()
+        public Task<List<PlayAMatch>> GetPlanAGameAsync()
         {
-            return database.Table<PlanAGame>().ToListAsync();
+            return database.Table<PlayAMatch>().ToListAsync();
         }
     }
 }

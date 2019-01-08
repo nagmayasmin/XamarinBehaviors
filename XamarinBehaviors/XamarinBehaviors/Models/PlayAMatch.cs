@@ -5,7 +5,7 @@ using SQLite;
 
 namespace XamarinBehaviors.Models
 {
-    public class PlanAGame
+    public class PlayAMatch
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

@@ -11,6 +11,7 @@ namespace XamarinBehaviors.ViewModels
 {
     public class AddPlanGameViewModel : ObservableBase
     {
+   
         public ICommand AddPlanAGame
         {
             get;
@@ -83,11 +84,14 @@ namespace XamarinBehaviors.ViewModels
         }
         public AddPlanGameViewModel()
         {
+            Player1Serving = true;
+            Player2Serving = false;
+
             try
             {
                AddPlanAGame = new Command(async () =>
                 {
-                    var todoList = await DependencyService.Get<IPlanAGame>().SavePlanGame(new Models.PlanAGame()
+                    var todoList = await DependencyService.Get<IPlanAGame>().SavePlanGame(new Models.PlayAMatch()
                     {
                         Player1 = this.Player1,
                         Player2 = this.Player2,
@@ -233,6 +237,20 @@ namespace XamarinBehaviors.ViewModels
         {
             get => _player1serving;
             set => SetProperty(ref _player1serving, value);
+
+            /*
+            set
+            {
+                if(_player1serving == true)
+                {
+                    _player2serving = false;
+                }
+                else
+                {
+                    _player1serving = true;
+                }
+            }
+            */
         }
 
         bool _player2serving;
@@ -241,6 +259,20 @@ namespace XamarinBehaviors.ViewModels
         {
             get => _player2serving;
             set => SetProperty(ref _player2serving, value);
+
+            /*
+            set
+            {
+                if (_player2serving == true)
+                {
+                    _player1serving = false;
+                }
+                else
+                {
+                    _player2serving = true;
+                }
+            }
+            */
         }
 
         internal  void DoExecute()
