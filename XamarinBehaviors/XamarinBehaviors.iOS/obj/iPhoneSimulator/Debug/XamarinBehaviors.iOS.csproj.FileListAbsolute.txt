@@ -186,3 +186,4 @@ E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.iOS\bin\iPhoneSim
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.iOS\bin\iPhoneSimulator\Debug\XamarinBehaviors.pdb
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.iOS\obj\iPhoneSimulator\Debug\XamarinBehaviors.iOS.csproj.CopyComplete
+E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.iOS\bin\iPhoneSimulator\Debug\XamarinBehaviors.dll.mdb

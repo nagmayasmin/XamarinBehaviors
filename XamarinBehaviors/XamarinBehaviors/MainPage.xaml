@@ -4,11 +4,13 @@
              xmlns:local="clr-namespace:XamarinBehaviors"       
              xmlns:behavior="clr-namespace:XamarinBehaviors.Behaviors"
              xmlns:converters="clr-namespace:XamarinBehaviors.Converters"
-             xmlns:vm="clr-namespace:XamarinBehaviors.ViewModels"             
+             xmlns:vm="clr-namespace:XamarinBehaviors.ViewModels"  
+             xmlns:altLabel ="clr-namespace:XamarinBehaviors.LabelBindableProperty"
              x:Class="XamarinBehaviors.MainPage">
 
     <ContentPage.Resources>
         <converters:PlayerServeConverter x:Key="PlayerServerConverter" />
+        <altLabel:AltLabel x:Key="AltLabel" />
     </ContentPage.Resources>
     
     <ContentPage.BindingContext>
@@ -35,29 +37,41 @@
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
+            <!--
+            https://stackoverflow.com/questions/43595801/handle-event-when-label-text-change
+            -->
 
-            <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
                 <Switch.Triggers>
-                    <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}"  >
+                    <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}" >
                         <Setter Property="IsToggled" Value="False" />
                     </DataTrigger>
                 </Switch.Triggers>
             </Switch>
-        <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" />
+
+
+            <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+                <Switch.Triggers>
+                    <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}" >
+                        <Setter Property="IsToggled" Value="True" />
+                    </DataTrigger>
+                </Switch.Triggers>
+            </Switch>
 
         <Entry Placeholder="Player 1" Grid.Column="0" Grid.Row="0" BackgroundColor="Aquamarine" HorizontalOptions="Start" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
         <Entry Placeholder="Player 2" Grid.Column="0" Grid.Row="1" BackgroundColor="BlanchedAlmond" HorizontalOptions="Start" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />
 
-            <Label x:Name="label1" BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small">
-              <!--  <Label.Triggers>
-                   <DataTrigger  TargetType="Label" Binding ="{Binding Source = {x:Reference switch1}, Path= IsToggled}" />
+            <!--   <Label x:Name="label1"  BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" Text="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"> -->
+            
+            <!--  <Label.Triggers>
+                   <DataTrigger  TargetType="Label" Binding ="{Binding Source = {x:Reference switch1}, Path= IsToggled}" /> 
                        
-                </Label.Triggers> -->
-            </Label>
-       
-            
-            
-         <Label BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+                </Label.Triggers> 
+            </Label> -->
+
+        <altLabel:AltLabel x:Name="label1" Text="{Binding Set11}" BackgroundColor="Aquamarine" Grid.Column="2" Grid.Row="0" TextChanged ="{Binding Set11}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+
+         <Label x:Name="label2" BackgroundColor="Aquamarine" Grid.Column="3" Grid.Row="0" Text="{Binding Set12}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
         <Label BackgroundColor="Aquamarine" Grid.Column="4" Grid.Row="0" Text="{Binding Set13}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
 
     <!--<Picker Title="Select a Score" Grid.Column="5" Grid.Row="0" ItemsSource="{Binding AllGameScores}" ItemDisplayBinding="{Binding Scores}" BindingContext="{x:StaticResource GameScoreViewModel }" SelectedIndex ="0"/>
