@@ -1,1 +1,0 @@
-E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.UWP\XamarinBehaviors.UWP.csproj;x86

@@ -23,7 +23,7 @@ namespace XamarinBehaviors.ViewModels
         }
 
 
-        int _set11;
+        int _set11 ;
 
         public int Set11
         {
@@ -96,14 +96,14 @@ namespace XamarinBehaviors.ViewModels
                         Player1 = this.Player1,
                         Player2 = this.Player2,
                         NumberOfSets = this.NumberOfSets,
-                        CurrentScore1 = this.CurrentScore1,
-                        CurrentScore2= this.CurrentScore2,
+                        //  CurrentScore1 = this.CurrentScore1,
+                        //  CurrentScore2= this.CurrentScore2,
                         Player1Serving = this.Player1Serving,
                         Player2Serving = this.Player2Serving,
-                        Set11 = AddSet11(CurrentScore1),
-                        Set21 = AddSet21(CurrentScore2),
-                        Set12 = AddSet12(CurrentScore1),
-                        Set22 = AddSet22(CurrentScore2)
+                        Set11 = this.Set11 + 1 // AddSet11(CurrentScore1),
+                       // Set21 = AddSet21(CurrentScore2),
+                       // Set12 = AddSet12(CurrentScore1),
+                       // Set22 = AddSet22(CurrentScore2)
                     //    Set13 = AddSet13(this.CurrentScore1),
                      //   Set23 = AddSet23(this.CurrentScore2)
 
@@ -121,13 +121,13 @@ namespace XamarinBehaviors.ViewModels
 
         private int AddSet11(string currentScore2)
         {
-           Set11 = (Set11 > 6 && CurrentScore1 == "GAME" && Set21 != 6) ? Set11 + 1 : Set11;
+           // Set11 = (Set11 > 6 && CurrentScore1 == "GAME" && Set21 != 6) ? Set11 + 1 : Set11;
             if (CurrentScore1 == "GAME")
             {
                 Set11 += 1;
-                CurrentScore1 = "0";
-                CurrentScore2 = "0";
-                AddPlanAGame.Execute(null);
+              //  CurrentScore1 = "0";
+              //  CurrentScore2 = "0";
+               AddPlanAGame.Execute(null);
             }
 
             return Set11;
