@@ -42,24 +42,24 @@
             https://stackoverflow.com/questions/43595801/handle-event-when-label-text-change
             -->
 
-    <!--    <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
-                <Switch.Triggers>
+        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+               <!-- <Switch.Triggers>
                     <DataTrigger TargetType="Switch" Binding ="{Binding Converter = {StaticResource LabelToSwitchConverter} >
                         <Setter Property="IsToggled" Value="False" />
                     </DataTrigger>
-                </Switch.Triggers>
-         </Switch> -->
+                </Switch.Triggers> -->
+         </Switch>
 
 
-        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Converter = {StaticResource LabelToSwitchConverter}, Path=Set11}" />
+            <!--    <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Converter = {StaticResource LabelToSwitchConverter}, Path=Set21}" /> -->
 
-         <!--   <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
-                <Switch.Triggers>
+          <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+              <!--  <Switch.Triggers>
                     <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}" >
                         <Setter Property="IsToggled" Value="True" />
                     </DataTrigger>
-                </Switch.Triggers>
-            </Switch> -->
+                </Switch.Triggers> -->
+            </Switch> 
 
         <Entry Placeholder="Player 1" Grid.Column="0" Grid.Row="0" BackgroundColor="Aquamarine" HorizontalOptions="Start" Text="{Binding Player1}" Style="{StaticResource NormalEntryField }" />
         <Entry Placeholder="Player 2" Grid.Column="0" Grid.Row="1" BackgroundColor="BlanchedAlmond" HorizontalOptions="Start" Text="{Binding Player2}"  Style="{StaticResource NormalEntryField }" />

@@ -100,7 +100,7 @@ namespace XamarinBehaviors.ViewModels
                         //  CurrentScore2= this.CurrentScore2,
                         Player1Serving = this.Player1Serving,
                         Player2Serving = this.Player2Serving,
-                        Set11 = this.Set11 + 1 // AddSet11(CurrentScore1),
+                        Set11 =   AddSet11(CurrentScore1),
                        // Set21 = AddSet21(CurrentScore2),
                        // Set12 = AddSet12(CurrentScore1),
                        // Set22 = AddSet22(CurrentScore2)
@@ -125,8 +125,8 @@ namespace XamarinBehaviors.ViewModels
             if (CurrentScore1 == "GAME")
             {
                 Set11 += 1;
-              //  CurrentScore1 = "0";
-              //  CurrentScore2 = "0";
+                CurrentScore1 = "0";
+                CurrentScore2 = "0";
                AddPlanAGame.Execute(null);
             }
 
