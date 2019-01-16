@@ -101,11 +101,11 @@ namespace XamarinBehaviors.ViewModels
                         Player1Serving = this.Player1Serving,
                         Player2Serving = this.Player2Serving,
                         Set11 =   AddSet11(CurrentScore1),
-                       // Set21 = AddSet21(CurrentScore2),
-                       // Set12 = AddSet12(CurrentScore1),
-                       // Set22 = AddSet22(CurrentScore2)
-                    //    Set13 = AddSet13(this.CurrentScore1),
-                     //   Set23 = AddSet23(this.CurrentScore2)
+                        Set21 = AddSet21(CurrentScore2),
+                        Set12 = AddSet12(CurrentScore1),
+                        Set22 = AddSet22(CurrentScore2)
+                   //     Set13 = AddSet13(this.CurrentScore1),
+                   //     Set23 = AddSet23(this.CurrentScore2)
 
                     });
 
@@ -119,59 +119,94 @@ namespace XamarinBehaviors.ViewModels
             }
         }
 
-        private int AddSet11(string currentScore2)
+        private int AddSet11(string currentScore1)
         {
-           // Set11 = (Set11 > 6 && CurrentScore1 == "GAME" && Set21 != 6) ? Set11 + 1 : Set11;
-            if (CurrentScore1 == "GAME")
+           if (currentScore1 == "GAME")
             {
                 Set11 += 1;
                 CurrentScore1 = "0";
                 CurrentScore2 = "0";
-               AddPlanAGame.Execute(null);
+                AddPlanAGame.Execute(null);
+
+                if (Player1Serving == true)
+                    Player1Serving = false;
+                else
+                    Player2Serving = false;
+
             }
 
             return Set11;
                      
         }
 
-        private int AddSet21(string currentScore1)
+        private int AddSet21(string currentScore2)
         {
-           Set21 = (Set21 > 0 && CurrentScore2 == "GAME" && Set11 != 6) ? Set21 + 1 : Set21;
+            //Set21 = (Set21 > 0 && CurrentScore2 == "GAME" && Set11 != 6) ? Set21 + 1 : Set21;
 
-            Set21 += 1;
-            if (CurrentScore2 == "GAME")
+            // Set21 += 1;
+            // if (CurrentScore2 == "GAME")
+            // {
+            //     CurrentScore2 = "0";
+            //     CurrentScore1 = "0";
+            // }
+
+            //     return Set21;
+
+            if (currentScore2 == "GAME")
             {
-                CurrentScore2 = "0";
+                Set21 += 1;
                 CurrentScore1 = "0";
+                CurrentScore2 = "0";
+                AddPlanAGame.Execute(null);
+
+                if (Player1Serving == true)
+                    Player1Serving = false;
+                else
+                    Player2Serving = false;
+
             }
 
-                return Set21;
+            return Set21;
+
         }
 
 
-        private int AddSet12(string currentScore1)
+        private int AddSet12(string CurrentScore1)
         {
-            Set12 = (CurrentScore1 == "GAME" && (Set11 == 6 || Set12 == 6)) ? Set12 + 1 : Set12;
             if (CurrentScore1 == "GAME")
             {
+                Set12 += 1;
                 CurrentScore1 = "0";
                 CurrentScore2 = "0";
+                AddPlanAGame.Execute(null);
+
+                if (Player1Serving == true)
+                    Player1Serving = false;
+                else
+                    Player2Serving = false;
             }
 
             return Set12;
-                       
+
         }
 
-        private int AddSet22(string currentScore2)
+        private int AddSet22(string CurrentScore2)
         {
-            Set22 = (CurrentScore2 == "GAME" && (Set11 == 6 || Set12 == 6)) ? Set22 + 1 : Set22;
             if (CurrentScore1 == "GAME")
             {
+                Set22 += 1;
                 CurrentScore1 = "0";
                 CurrentScore2 = "0";
-            }
-            return Set22;
+                AddPlanAGame.Execute(null);
 
+                if (Player1Serving == true)
+                    Player1Serving = false;
+                else
+                    Player2Serving = false;
+
+            }
+
+            return Set22;
         }
 
         /*

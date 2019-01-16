@@ -207,6 +207,4 @@ E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\obj\Debug
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\obj\Debug\80\android\assets\Xamarin.Forms.Platform.Android.pdb
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\obj\Debug\80\android\assets\Xamarin.Forms.Xaml.pdb
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\obj\Debug\80\android\assets\XamarinBehaviors.Android.pdb
-E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors\bin\Debug\netstandard2.0\XamarinBehaviors.dll
-E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\bin\Debug\XamarinBehaviors.dll.mdb
 E:\XSamples\XamarinBehaviors\XamarinBehaviors\XamarinBehaviors.Android\obj\Debug\80\linksrc\XamarinBehaviors.dll.mdb

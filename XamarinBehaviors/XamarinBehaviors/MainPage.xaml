@@ -42,7 +42,7 @@
             https://stackoverflow.com/questions/43595801/handle-event-when-label-text-change
             -->
 
-        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Mode=TwoWay, Converter={StaticResource PlayerServerConverter}}" >
                <!-- <Switch.Triggers>
                     <DataTrigger TargetType="Switch" Binding ="{Binding Converter = {StaticResource LabelToSwitchConverter} >
                         <Setter Property="IsToggled" Value="False" />
@@ -53,7 +53,7 @@
 
             <!--    <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Converter = {StaticResource LabelToSwitchConverter}, Path=Set21}" /> -->
 
-          <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Converter={StaticResource PlayerServerConverter}}" >
+          <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Source={x:Reference switch1}, Path= IsToggled, Mode=TwoWay, Converter={StaticResource PlayerServerConverter}}" >
               <!--  <Switch.Triggers>
                     <DataTrigger TargetType="Switch" Binding ="{Binding Source = {x:Reference label1}, Path= Text}" >
                         <Setter Property="IsToggled" Value="True" />
