@@ -26,7 +26,7 @@ namespace XamarinBehaviors.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
+            if (value != null && targetType.Name != "Object")
                   return !(bool)value;
             
             return value;

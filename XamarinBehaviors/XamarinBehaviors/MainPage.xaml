@@ -42,13 +42,31 @@
             https://stackoverflow.com/questions/43595801/handle-event-when-label-text-change
             -->
 
-        <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Mode=TwoWay, Converter={StaticResource PlayerServerConverter}}" >
-               <!-- <Switch.Triggers>
+              <Switch HorizontalOptions="Start" x:Name="switch1" Grid.Column="1" Grid.Row="0" IsToggled= "{Binding Source={x:Reference switch2}, Path= IsToggled, Mode=TwoWay, Converter={StaticResource PlayerServerConverter}}" >
+                <!--     <Switch.Triggers>
                     <DataTrigger TargetType="Switch" Binding ="{Binding Converter = {StaticResource LabelToSwitchConverter} >
                         <Setter Property="IsToggled" Value="False" />
                     </DataTrigger>
                 </Switch.Triggers> -->
-         </Switch>
+         </Switch>  
+
+
+            <!-- <Switch x:Name="switch1" HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" >
+                <Switch.Style>
+                    <Style TargetType="Switch">
+                        <Style.Triggers>
+                            <MultiTrigger TargetType="Switch">
+                                <MultiTrigger.Conditions>
+                                    <BindingCondition Binding="{Binding Source={x:Reference switch2}, Path= IsToggled, Mode=TwoWay}" Value="true"/>
+                                    <BindingCondition Binding="{Binding  Source={}, Converter={StaticResource LabelToSwitchConverter}}" Value="true" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="IsToggled" Value="True" />
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Switch.Style>
+            </Switch> -->
+
 
 
             <!--    <Switch HorizontalOptions="Start" x:Name="switch2" Grid.Column="1" Grid.Row="1" IsToggled= "{Binding Converter = {StaticResource LabelToSwitchConverter}, Path=Set21}" /> -->
